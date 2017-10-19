@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Assignment_Test - Drag and Drop
+    </title>
+    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        #galleryDiv {
+            margin: 20px;
+            height: 400px;
+            padding: 20px;
+            border: 1px dashed brown;
+        }
+
+        #emptyDiv {
+            margin: 20px;
+            height: 400px;
+            padding: 20px;
+            border: 1px dashed red;
+        }
+
+        #noteDiv {
+            margin: 20px;
+            min-height: 50px;
+            padding: 20px;
+            border: 1px solid black;
+        }
+
+        img {
+            max-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="galleryDiv" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="row">
+            <div id="imgDiv1" class="col-xs-4" ondrop="dropSame(event)" ondragover="allowDrop(event)">
+                <img src="drag_drop.png" draggable="true" ondragstart="drag(event)" id="img1"/>
+            </div>
+            <div id="imgDiv2" class="col-xs-4" ondrop="dropSame(event)" ondragover="allowDrop(event)">
+                <img src="drag_drop.png" draggable="true" ondragstart="drag(event)" id="img2"/>
+            </div>
+            <div id="imgDiv3" class="col-xs-4" ondrop="dropSame(event)" ondragover="allowDrop(event)">
+                <img src="drag_drop.png" draggable="true" ondragstart="drag(event)" id="img3"/>
+            </div>
+        </div>
+    </div>
+    <div id="emptyDiv" class="container"  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="noteDiv" class="container"  contenteditable="true"></div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

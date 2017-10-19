@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        localstorage demo
+    </title>
+    <script>
+        var storage = window.localStorage;
+        var username = "ving@saxobank.com";
+        var user_prefs = {
+            favColor: "green",
+            date: Date.now()
+        };
+
+        if (!localStorage.getItem(username)){
+            storage.setItem(username, JSON.stringify(user_prefs));
+        }
+        var obj = JSON.parse(storage.getItem(username));
+        debugger;
+        var currentDate = Date.now();
+        var dayslapse = (currentDate - obj.date) / 86400000;
+        if (dayslapse > 3) {
+            storage.removeItem(username);
+        }
+       // storage.clear();
+    </script>
+</head>
+
+<body>
+    <h1>Some cool header info here....</h1>
+</body>
+
+</html>
